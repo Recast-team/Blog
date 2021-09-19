@@ -170,7 +170,7 @@ where SMS_G_System_COMPUTER_SYSTEM.Model = "$model"
     foreach ($Machine in $MachineDatabase)
         {
         $ColModel = $Machine.Model
-        $ColProductID = $Machine.ProductID
+        $ColProductID = $Machine.ProductID | select -Unique
         $ColManufacturer = $Machine.Manufacturer
         #Standardize Dell & HP Manufacturer Names
         #Set $Collection Name to ModelCol - Manufauturer - Model (or similar variation for HP)
